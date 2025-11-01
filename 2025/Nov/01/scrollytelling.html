@@ -1,0 +1,42 @@
+<!-- 
+  D3.js Scrollytelling Demo
+-->
+
+<div id="scroll-container">
+    <div id="graphic">
+      <div id="chart"></div>
+    </div>
+    
+    <div id="steps">
+      <div class="step" data-step="0">
+        <div class="step-content">
+          <h3>Step 1: Initial State</h3>
+          <p>Our story begins with a simple dataset of nine points. Here we're looking at the relationship between <strong>Foo</strong> (x-axis) and <strong>Bar</strong> (y-axis) values.</p>
+        </div>
+      </div>
+      
+      <div class="step" data-step="1">
+        <div class="step-content">
+          <h3>Step 2: Rearranging</h3>
+          <p>Watch as the points smoothly transition to show a different relationship. Now we're viewing <strong>Bar</strong> (x-axis) versus <strong>Baz</strong> (y-axis).</p>
+        </div>
+      </div>
+      
+      <div class="step" data-step="2">
+        <div class="step-content">
+          <h3>Step 3: Final View</h3>
+          <p>Finally, we see how <strong>Baz</strong> (x-axis) relates back to our original <strong>Foo</strong> values (y-axis), completing the narrative circle.</p>
+        </div>
+      </div>
+      
+      <div class="step" data-step="3">
+        <div class="step-content">
+          <h3>Bonus: Color Encoding</h3>
+          <p>As a final flourish, the points change color based on their x-position, adding another dimension to our visualization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ARIA live region for accessibility -->
+  <div id="status" class="sr-only" aria-live="polite" aria-atomic="true"></div>

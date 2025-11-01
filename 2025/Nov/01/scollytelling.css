@@ -1,0 +1,165 @@
+/* 
+  D3.js Scrollytelling Demo - Styles
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a202c;
+    background: #f7fafc;
+  }
+  
+  /* Scroll container */
+  #scroll-container {
+    position: relative;
+  }
+  
+  /* Sticky graphic container */
+  #graphic {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  #chart {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+  }
+  
+  /* Steps container */
+  #steps {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  .step {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .step-content {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    pointer-events: all;
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  
+  .step.active .step-content {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .step-content h3 {
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .step-content p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+  }
+  
+  .step-content strong {
+    color: #667eea;
+    font-weight: 600;
+  }
+  
+  /* SVG styles */
+  svg {
+    display: block;
+  }
+  
+  .data-point {
+    cursor: pointer;
+    transition: opacity 200ms ease;
+  }
+  
+  .data-point:hover {
+    opacity: 1 !important;
+    stroke-width: 3 !important;
+  }
+  
+  .axis-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    fill: #4a5568;
+  }
+  
+  .axis line,
+  .axis path {
+    stroke: #cbd5e0;
+    shape-rendering: crispEdges;
+  }
+  
+  .axis text {
+    fill: #718096;
+    font-size: 12px;
+  }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    #chart {
+      padding: 10px;
+    }
+    
+    .step-content {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+    
+    .step-content h3 {
+      font-size: 1.25rem;
+    }
+    
+    .step-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Loading state */
+  #chart:empty::before {
+    content: 'Loading visualization...';
+    display: block;
+    text-align: center;
+    padding: 3rem;
+    color: #718096;
+    font-size: 1.1rem;
+  }
